@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Ma'lumot {% endblock title %}
+
+{% block content %}
+<div>
+    <h2>{{ products.name }}</h2>
+    <h2>{{ products.description }}</h2>
+    <h2>{{ products.price }}</h2>
+    <h2>{{ products.author }}</h2>
+</div>
+<a href="{% url 'postdelete' products.id %}">ochirish</a>
+<a href="{% url 'postedit' products.id %}">tahrirlash</a>
+{% endblock content %}

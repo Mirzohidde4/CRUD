@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Mahsulotlar {% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'shop.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <h1>Barcha mahsulotlar</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">About</th>
+            <th scope="col">Published</th>
+            <th scope="col">Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for post in object_list %}
+              <tr>
+                <td>{{ post.id }}</td>
+                <td><a href="{% url 'detail' post.pk %}">{{ post.name }}</a></td>
+                <td>{{ post.description }}</td>
+                <td>{{ post.created.date }}</td>
+                <td>{{ post.author }}</td>
+              </tr>
+          {% endfor %} 
+        </tbody>
+      </table>
+{% endblock content %}
