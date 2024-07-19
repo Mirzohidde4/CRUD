@@ -1,12 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView, View
 from .models import Products
 from django.urls import reverse_lazy
 
 # Create your views here.
-def Home(request):
-    user = request.user
-    return render(request, 'main/home.html', {'user': user})
+class Home(TemplateView):
+    template_name = 'main/home.html'
+
+
+# def Home(request):
+#     user = request.user
+#     return render(request, 'main/home.html', {'user': user})
 
 
 class Shop(ListView):
