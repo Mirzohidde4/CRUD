@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
 {% load static %}
 {% block title %} Accountni o'chirish {% endblock title %}
 
@@ -7,6 +8,6 @@
 <form action="" method="post">
     {% csrf_token %}
     <p>{{ request.user }} accountingizni o'chirasizmi?</p>
-    <input type="submit" value="O'chirish">
+    {% bootstrap_button button_type="submit" content="O'chirish" %}
 </form>
 {% endblock content %}
