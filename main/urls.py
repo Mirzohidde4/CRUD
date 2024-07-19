@@ -6,11 +6,13 @@ from .views import (
     Create, 
     Edit, 
     Delete,
+    MyPosts,
 )
 
 urlpatterns = [
     path('', Home, name='home'),
-    path('shop', Shop.as_view(), name='shop'),
+    path('shop/', Shop.as_view(), name='shop'),
+    path('myposts/', MyPosts.as_view(), name='myposts'),
     path('post/<int:pk>/', Detail.as_view(), name='detail'),
     path('post/new/', Create.as_view(), name='newpost'),
     path('post/edit/<int:pk>/', Edit.as_view(), name='postedit'),

@@ -35,3 +35,8 @@ class Delete(DeleteView):
     model = Products
     template_name = 'main/postdelete.html'
     success_url = reverse_lazy('shop')
+
+
+class MyPosts(ListView):
+    model = Products
+    template_name = 'main/myposts.html'

@@ -30,7 +30,7 @@
                   {% if request.user.is_authenticated %}
                   <li><a class="dropdown-item" href="{% url 'settings' request.user.id %}">Settings</a></li>
                   <li><a class="dropdown-item" href="{% url 'newpost' %}">New post</a></li>
-                  <li><a class="dropdown-item" href="">My posts</a></li>
+                  <li><a class="dropdown-item" href="{% url 'myposts' %}">My posts</a></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="{% url 'deleteaccount' request.user.id %}">Delete account</a></li>
