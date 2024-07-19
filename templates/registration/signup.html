@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Account ochish {% endblock title %}
+
+{% block content %}
+<h1>Ro'yxatdan otish</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Tasdiqlash</button>
+</form>
+{% endblock content %}

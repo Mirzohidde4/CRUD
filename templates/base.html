@@ -33,6 +33,10 @@
               </li> -->
               {% if request.user.is_authenticated %}
               <li class="nav-item">
+                <!-- <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <a href="" onclick='this.parentNode.submit(); return false;'>Logout</a>
+                </form> -->
                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
               </li>
               <li class="nav-item">
@@ -43,7 +47,7 @@
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  " href="{% url 'sign' %}">Sign</a>
+                <a class="nav-link  " href="{% url 'signup' %}">Sign</a>
               </li>
               {% endif %}
             </ul>
