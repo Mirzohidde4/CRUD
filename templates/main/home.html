@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Asosiy sahifa {% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock css %}
 
 {% block content %}
     {% if request.user.is_authenticated %}
         <h1>Assalomu alaykum {{ user }}</h1>
-        <a href="{% url 'newpost' %}">Post qo'shish</a>
+        <a class="new" href="{% url 'newpost' %}">Post qo'shish</a>
+        <!-- <button type="submit" class="button-7" role="button">Button 7</button> -->
     {% else %}
     <h1>Assalomu alaykum</h1>
     {% endif %}    
