@@ -8,7 +8,10 @@
     <h2>{{ products.description }}</h2>
     <h2>{{ products.price }}</h2>
     <h2>{{ products.author }}</h2>
+    <!-- <h2>{{ products.author_id }}</h2> -->
 </div>
+{% if request.user == products.author %}
 <a href="{% url 'postdelete' products.id %}">ochirish</a>
 <a href="{% url 'postedit' products.id %}">tahrirlash</a>
+{% endif %}
 {% endblock content %}

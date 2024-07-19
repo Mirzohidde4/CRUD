@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Accountni o'chirish {% endblock title %}
+
+{% block content %}
+<h1>Ochirish</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>{{ request.user }} accountingizni o'chirasizmi?</p>
+    <input type="submit" value="O'chirish">
+</form>
+{% endblock content %}
