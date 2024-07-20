@@ -8,6 +8,6 @@
 <form action="" method="post">
     {% csrf_token %}
     <p>{{ request.user }} accountingizni o'chirasizmi?</p>
-    {% bootstrap_button button_type="submit" content="O'chirish" %}
+    <button type="submit" class="btn btn-primary">O'chirish</button>
 </form>
 {% endblock content %}
